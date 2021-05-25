@@ -106,7 +106,7 @@ while($row = mysqli_fetch_array($result)) {
 <td><?php echo $row["type"]; ?></td>
 <td><?php echo $row["details"]; ?></td>
 <td><a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
-<td><a href="delete.php?id=<?php echo $row["id"]; ?>">Update</a></td>
+<td><a href="update.php?id=<?php echo $row["id"]; ?>">Update</a></td>
 </tr>
 <?php
 $i++;
