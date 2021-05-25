@@ -127,7 +127,7 @@ if (isset($_POST['update']))
     $type = $_POST['type'];
     $detail = $_POST['detail'];
 
-    $update_query = "UPDATE categories SET name= '$name', type='$type', detail='$detail' WHERE id=$id";
+    $update_query = "UPDATE categories SET name= '$name' ,  type='$type' ,  details='$detail' WHERE id=$id";
     $update_result =  mysqli_query($db, $update_query);
 
     if($update_result)
