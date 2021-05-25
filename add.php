@@ -129,8 +129,8 @@ include 'db.php';
     
       // $check_query = "SELECT name,type,detail FROM categories WHERE name='.$name.' OR type='.$type.' OR detail='.$detail.'";
       $check_query = "SELECT * FROM `categories` WHERE 
-      `name` = `{$name}`
-      `type` = `{$type}` 
+      `name` = `{$name}` AND
+      `type` = `{$type}` AND
       `detail` = `{$detail}`
       ";
 
@@ -142,7 +142,7 @@ include 'db.php';
       }
 
       else{
-        
+ 
       $sql = "INSERT INTO categories (name,type,details) VALUES ('$name','$type','$detail')";
       $result =  mysqli_query($db, $sql);
       if ($result)  {
@@ -156,7 +156,7 @@ include 'db.php';
   }
 
 
-// ?>
+// ?> 
 
  <?php
 // while($row = $result->fetch_assoc(  )){
