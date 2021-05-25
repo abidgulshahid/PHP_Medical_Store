@@ -83,29 +83,6 @@ global $result;
     <center>
   
 
-<table class="table">
- <thead>
-<tr>
-<th>Name</th>
-<th>Email</th>
-<th>Roll No</th>
-</tr>
-
-</thead>
-<?php
-if(count($_GET)>0) {
-    $roll_no=$_GET['search'];
-    $result = mysqli_query($db,"SELECT * FROM categories where name='$roll_no'");
-   
-}
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-<td><?php echo $row["name"]; ?></td>
-<td><?php echo $row["type"]; ?></td>
-<td><?php echo $row["details"]; ?></td>
-<td><a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
 <td><a href="delete.php?id=<?php echo $row["id"]; ?>">Update</a></td>
 </tr>
 <?php
