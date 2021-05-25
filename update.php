@@ -88,7 +88,7 @@ if (isset($_GET['edit']))
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-  <h1>Add Data</h1>
+  <h1>Update Data</h1>
     <center>
 <form action="" method="POST">
  
