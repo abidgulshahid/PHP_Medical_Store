@@ -1,8 +1,8 @@
 <?php 
 $host = "localhost"; /* Host name */
 $user = "root"; /* User */
-$password = ""; /* Password */
-$dbname = "nms"; /* Database name */
+$password = "root"; /* Password */
+$dbname = "medical"; /* Database name */
 
 $db = mysqli_connect($host, $user, $password,$dbname);
 // Check connection
