@@ -37,7 +37,7 @@
   </head>
   <body>
     
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,23 +53,19 @@
           <a class="nav-link active" aria-current="page" href="#">Logout</a>
         </li>
 
-        
-       <!-- <li class="nav-item">
-           <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
+
       </ul>
-    
+      <form class="d-flex" method="GET" action='search.php'>
+        <input class="form-control me-2" name='search' type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
-
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Username</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+    <h1> <code>Noman</code></h1>
+    <hr>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="add.php" role="button">ADD &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">BillS &raquo;</a>
