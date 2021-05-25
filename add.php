@@ -13,12 +13,12 @@ include 'db.php';
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container">
+<!-- <div class="container">
   <form class="form-inline" method="GET" action="search.php">
     <input type="text" name="search" class="form-control" placeholder="Search roll no..">
     <input type='submit' >
   </form>
-</div>
+</div> -->
 </body>
 </html>
 
@@ -78,7 +78,7 @@ include 'db.php';
 
 
       </ul>
-      <form class="d-flex" method="GET">
+      <form class="d-flex" method="GET" action='search.php'>
         <input class="form-control me-2" name='search' type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
