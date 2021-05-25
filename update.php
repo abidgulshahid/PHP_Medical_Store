@@ -82,7 +82,7 @@ global $result;
   <h1>Add Data</h1>
     <center>
 <form action="" method="POST">
-
+ 
 <div class="form-group">
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name='name'>
   </div>
