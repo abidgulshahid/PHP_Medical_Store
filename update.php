@@ -83,22 +83,6 @@ global $result;
     <center>
   
 
-<td><a href="delete.php?id=<?php echo $row["id"]; ?>">Update</a></td>
-</tr>
-<?php
-$i++;
-$delete = $_GET['search'];
-$del = mysqli_query($db, "DELETE  FROM categories WHERE categories.name=$roll_no ");
-if($del)
-{
-echo "<script> alert('Deleted')</script>";
-}
-else {
-    echo "<script> alert('Not Deleted') </script>";
-}
-}
-?>
-</table>
 
     </center>
   </div>
