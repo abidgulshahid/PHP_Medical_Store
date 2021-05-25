@@ -126,6 +126,21 @@ if (isset($_POST['update']))
     $name = $_POST['name'];
     $type = $_POST['type'];
     $detail = $_POST['detail'];
+
+    $update_query = "UPDATE categories SET name= '$name', type='$type', detail='$detail' WHERE id=$id";
+    $update_result =  mysqli_query($db, $update_query);
+
+    if($update_result)
+    {
+        echo "<script> alert('Updated')</script>";
+
+    }
+    else 
+    {
+        echo "<script> alert('Not Updated')</script>";
+
+    }
+
 }
 
 
