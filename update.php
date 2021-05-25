@@ -42,6 +42,25 @@ global $result;
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
+
+  <?php 
+if (isset($_GET['edit']))
+{
+    $id = $_GET['edit'];
+    $update = true;
+    $get_record = mysqli_query($db, "SELECT * FROM categories WHERE id =$id ");
+    
+    if (count($get_record) == 1 ) {
+        $n = mysqli_fetch_array($get_record);
+        $name = $n['name'];
+        echo $name;
+        $type = $n['type'];
+        $detail = $n['details'];
+    }
+}
+
+
+?>
     
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
@@ -96,11 +115,6 @@ global $result;
     </center>
   </div>
 </main>
-
-<? php
-
-
-?>
 
         
   </body>
