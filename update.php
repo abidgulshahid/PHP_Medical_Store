@@ -1,14 +1,7 @@
-
-
-
 <?php
-
 include 'db.php';
 global $result;
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +100,10 @@ global $result;
   </div>
 </main>
 
+<? php
 
+
+?>
 
         
   </body>
