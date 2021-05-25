@@ -122,7 +122,10 @@ if (isset($_GET['edit']))
 
 if (isset($_POST['update']))
 {
-    
+    $id  = $_POST['id'];
+    $name = $_POST['name'];
+    $type = $_POST['type'];
+    $detail = $_POST['detail'];
 }
 
 
