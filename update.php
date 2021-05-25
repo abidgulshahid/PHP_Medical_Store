@@ -92,7 +92,7 @@ global $result;
 <input type="submit" class="btn btn-primary"  name="submit" value="Enter Data">
 
     </form>
-
+ 
     </center>
   </div>
 </main>
