@@ -49,7 +49,7 @@ if (isset($_GET['edit']))
     $id = $_GET['edit'];
     $update = true;
     $get_record = mysqli_query($db, "SELECT * FROM categories WHERE id =$id ");
-    
+
     if (count($get_record) == 1 ) {
         $n = mysqli_fetch_array($get_record);
         $name = $n['name'];
@@ -93,22 +93,24 @@ if (isset($_GET['edit']))
 <form action="" method="POST">
  
 <div class="form-group">
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name='name'>
+    <input type="text" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name='name'>
   </div>
 
   <div class="form-group">
-    <input type="text" name="type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
+    <input type="text" value="<?php echo $type; ?>" name="type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
   </div>
 
 
   <div class="form-group">
-    <input type="text" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Details">
+    <input type="text" value="<?php echo $detail; ?>" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Details">
   </div>
+  <input type="hidden" name="id" value="<?php echo $id; ?>">
+
 <!-- <input type="text" name="name"> 
 <input type="text" name="type"> 
 <input type="text" name="detail"> -->
 
-<input type="submit" class="btn btn-primary"  name="submit" value="Enter Data">
+<input type="submit" class="btn btn-primary"  name="update" value="Enter Data">
 
     </form>
  
@@ -116,6 +118,15 @@ if (isset($_GET['edit']))
   </div>
 </main>
 
+<?php 
+
+if (isset($_POST['update']))
+{
+    
+}
+
+
+?>
         
   </body>
 </html>
