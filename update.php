@@ -81,7 +81,7 @@ global $result;
   <div class="bg-light p-5 rounded">
     <h1>Search Data</h1>
     <center>
-
+  
 
 <table class="table">
  <thead>
