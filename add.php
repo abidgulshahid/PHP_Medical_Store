@@ -127,15 +127,26 @@ include 'db.php';
       $type = $_POST['type'];
       $detail    = $_POST['detail'];
     
-      $check_query = "SELECT name,type,detail FROM categories WHERE name='.$name.' OR type='.$type.' OR detail='.$detail.'"
-      if($check_query)
+      // $check_query = "SELECT name,type,detail FROM categories WHERE name='.$name.' OR type='.$type.' OR detail='.$detail.'";
+      $check_query = "SELECT * FROM `categories` WHERE 
+      `name` = `{$name}`
+      `type` = `{$type}` 
+      `detail` = `{$detail}`
+      ";
+
+      $check_result = mysqli_query($db, $check_query);
+
+      if ( mysqli_num_rows ( $check_result ) > 1 )
       {
-        echo "Data Already Available in your Data Base";
+        echo "<script> alert('Data Already Available in your Database.') </script>";
       }
+
       else{
+        
       $sql = "INSERT INTO categories (name,type,details) VALUES ('$name','$type','$detail')";
-      if (mysqli_query($db, $sql)) {
-        echo "<script> alert('New Record Added Successfully') </script>";
+      $result =  mysqli_query($db, $sql);
+      if ($result)  {
+        echo "<script> alert('Data Inserted') </script>";
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
       }
