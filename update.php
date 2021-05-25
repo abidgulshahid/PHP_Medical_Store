@@ -110,7 +110,7 @@ if (isset($_GET['edit']))
 <input type="text" name="type"> 
 <input type="text" name="detail"> -->
 
-<input type="submit" class="btn btn-primary"  name="update" value="Enter Data">
+<input type="submit" class="btn btn-primary"  name="update" value="Update Data">
 
     </form>
  
