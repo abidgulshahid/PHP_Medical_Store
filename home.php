@@ -71,6 +71,7 @@
     <h1>Username</h1>
     <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
+    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="add.php" role="button">ADD &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">BillS &raquo;</a>
 
   </div>
