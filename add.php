@@ -88,19 +88,30 @@ include 'db.php';
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Username</h1>
+    <h1>Add Data</h1>
     <center>
 <form action="" method="POST">
 
-<input type="text" name="name"> 
-<input type="text" name="type"> 
-<input type="text" name="detail">
+<div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name='name'>
+  </div>
 
-<input type="submit" name="submit" value="ASD">
+  <div class="form-group">
+    <input type="text" name="type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
+  </div>
+
+
+  <div class="form-group">
+    <input type="text" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Details">
+  </div>
+<!-- <input type="text" name="name"> 
+<input type="text" name="type"> 
+<input type="text" name="detail"> -->
+
+<input type="submit" class="btn btn-primary"  name="submit" value="Enter Data">
 
     </form>
 
-    <a href="#">SYRUP</a>
     </center>
   </div>
 </main>
@@ -110,7 +121,6 @@ include 'db.php';
       
   </body>
 </html>
- -->
 <?php 
   if(isset($_POST['submit'])){
       $name = $_POST['name'];
