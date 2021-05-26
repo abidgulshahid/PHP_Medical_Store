@@ -129,14 +129,14 @@ include 'db.php';
     
       // $check_query = "SELECT name,type,detail FROM categories WHERE name='.$name.' OR type='.$type.' OR detail='.$detail.'";
       $check_query = "SELECT * FROM `categories` WHERE 
-      `name` = `{$name}` AND
-      `type` = `{$type}` AND
+      `name` = `{$name}` OR
+      `type` = `{$type}` OR
       `detail` = `{$detail}`
       ";
 
       $check_result = mysqli_query($db, $check_query);
 
-      if ( mysqli_num_rows ( $check_result ) > 1 )
+      if ( mysqli_num_rows ( $check_result ) >=0 )
       {
         echo "<script> alert('Data Already Available in your Database.') </script>";
       }
