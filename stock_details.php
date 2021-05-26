@@ -5,7 +5,7 @@ global $result;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Search Example</title>
+  <title>Stock Details</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
@@ -55,7 +55,7 @@ global $result;
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="home.php">Home</a>
         </li>
 
         <li class="nav-item">
