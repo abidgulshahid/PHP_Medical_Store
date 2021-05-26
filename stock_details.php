@@ -1,14 +1,7 @@
-
-
-
 <?php
-
 include 'db.php';
 global $result;
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +13,6 @@ global $result;
 <body>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -86,39 +78,24 @@ global $result;
 <table class="table">
  <thead>
 <tr>
-<th>Name</th>
-<th>Email</th>
-<th>Roll No</th>
+<th>Type</th>
 </tr>
 
 </thead>
 <?php
-if(count($_GET)>0) {
-    $roll_no=$_GET['search'];
-    $result = mysqli_query($db,"SELECT * FROM categories where name='$roll_no'");
+
+    $result = mysqli_query($db,"SELECT id, type FROM categories");
    
-}
+
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
-<td><?php echo $row["name"]; ?></td>
 <td><?php echo $row["type"]; ?></td>
-<td><?php echo $row["details"]; ?></td>
-<td><a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
-<td><a href="update.php?edit=<?php echo $row["id"]; ?>">Update</a></td>
+<td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
 </tr>
 <?php
 $i++;
-$delete = $_GET['search'];
-$del = mysqli_query($db, "DELETE  FROM categories WHERE categories.name=$roll_no ");
-if($del)
-{
-echo "<script> alert('Deleted')</script>";
-}
-else {
-    echo "<script> alert('Not Deleted') </script>";
-}
 }
 ?>
 </table>
