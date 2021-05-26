@@ -1,4 +1,4 @@
-## Medical Store Web Application
+## Medical Store CRUD Web Application
 
 ### Features 
 
