@@ -1,20 +1,18 @@
-<!doctype html>
+<?php
+include 'db.php';
+global $result;
+?>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>Top navbar example · Bootstrap v5.0</title>
+<head>
+  <title>Search Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+<body>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
-
-    
-
-    <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -41,7 +39,6 @@
     </style>
 
     
-    <!-- Custom styles for this template -->
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
@@ -62,16 +59,10 @@
           <a class="nav-link active" aria-current="page" href="#">Logout</a>
         </li>
 
-        
-       <!-- <li class="nav-item">
-           <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
+
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" method="GET" action='search.php'>
+        <input class="form-control me-2" name='search' type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
@@ -80,19 +71,41 @@
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Username</h1>
+    <h1>Search Data</h1>
     <center>
-    <a class="btn btn-lg btn-primary"  href="#" role="button">Add &raquo;</a>
-    <a class="btn btn-lg btn-primary" id="delete" href="#" role="button">Delete &raquo;</a>  
 
 
-    <a href="#">SYRUP</a>
+<table class="table">
+ <thead>
+<tr>
+<th>Type</th>
+</tr>
+
+</thead>
+<?php
+
+    $result = mysqli_query($db,"SELECT id, type FROM categories");
+   
+
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
+<tr>
+<td><?php echo $row["type"]; ?></td>
+<td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
+</tr>
+<?php
+$i++;
+}
+?>
+</table>
+
     </center>
   </div>
 </main>
 
 
 
-      
+        
   </body>
 </html>
