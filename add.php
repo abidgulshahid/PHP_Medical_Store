@@ -127,29 +127,32 @@ include 'db.php';
       $type = $_POST['type'];
       $detail    = $_POST['detail'];
     
-      $check_query = "SELECT name,type,details FROM categories WHERE name='.$name.' AND type='.$type.' AND detail='.$detail.'";
+      // $check_query = "SELECT name,type,details FROM categories WHERE name='.$name.' AND type='.$type.' AND detail='.$detail.'";
       // $check_query = "SELECT * FROM `categories` WHERE 
       // `name` = `{$name}` OR
       // `type` = `{$type}` OR
       // `detail` = `{$detail}`
       // ";
 
-      $check_result = mysqli_query($db, $check_query);
-      if($check_query)
-      {
-        if (mysqli_nums_rows ($check_result) > 0)
-        {
-          echo "<script> alert('Data Already Available in your Database.') </script>";
+      // $check_result = mysqli_query($db, $check_query);
+      // if($check_query)
+      // {
+      //   if (mysqli_num_rows ($check_result) > 0)
+      //   {
+      //     while($data = mysqli_fetch_assoc($check_result)){
 
-        }
-        else {
-          echo "<script> alert('Not Found.') </script>";
+          
+      //     echo "<script> alert('Data Already Available in your Database.') </script>";
+      //     }
+      //   }
+      //   else {
+      //     echo "<script> alert('Not Found.') </script>";
 
-        }
-      }else 
-      {
-        echo "Error". mysqli_error();
-      }
+      //   }
+      // }else 
+      // {
+      //   echo "Error". mysqli_error();
+      // }
 
   
  
