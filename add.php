@@ -127,12 +127,12 @@ include 'db.php';
       $type = $_POST['type'];
       $detail    = $_POST['detail'];
     
-      // $check_query = "SELECT name,type,detail FROM categories WHERE name='.$name.' OR type='.$type.' OR detail='.$detail.'";
-      $check_query = "SELECT * FROM `categories` WHERE 
-      `name` = `{$name}` OR
-      `type` = `{$type}` OR
-      `detail` = `{$detail}`
-      ";
+      $check_query = "SELECT name,type,details FROM categories WHERE name='.$name.' AND type='.$type.' AND detail='.$detail.'";
+      // $check_query = "SELECT * FROM `categories` WHERE 
+      // `name` = `{$name}` OR
+      // `type` = `{$type}` OR
+      // `detail` = `{$detail}`
+      // ";
 
       $check_result = mysqli_query($db, $check_query);
 
