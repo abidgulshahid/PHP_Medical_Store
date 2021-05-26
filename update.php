@@ -50,10 +50,9 @@ if (isset($_GET['edit']))
     $update = true;
     $get_record = mysqli_query($db, "SELECT * FROM categories WHERE id =$id ");
 
-    if (count($get_record) == 1 ) {
+    if (count(array( $get_record)) == 1 ) {
         $n = mysqli_fetch_array($get_record);
         $name = $n['name'];
-        echo $name;
         $type = $n['type'];
         $detail = $n['details'];
     }
