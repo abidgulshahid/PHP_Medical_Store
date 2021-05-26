@@ -136,7 +136,7 @@ include 'db.php';
 
       $check_result = mysqli_query($db, $check_query);
 
-      if ( mysqli_num_rows ( $check_result ) >=0 )
+      if ( mysqli_num_rows ( $check_result ) > 0 )
       {
         echo "<script> alert('Data Already Available in your Database.') </script>";
       }
