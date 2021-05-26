@@ -74,14 +74,16 @@ global $result;
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Search Data</h1>
+    <h1>Stocks  Details</h1>
     <center>
 
 
 <table class="table">
  <thead>
 <tr>
+<th>Name</th>
 <th>Type</th>
+<th>Details</th>
 </tr>
 
 </thead>
@@ -101,19 +103,19 @@ global $result;
   }
   
   
-    $result = mysqli_query($db,"SELECT id, type FROM categories");
    
 
 $i=0;
-while($row = mysqli_fetch_array($result)) {
+
 ?>
 <tr>
-<td><?php echo $row["type"]; ?></td>
-<td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
+<td><?php echo  $name ?></td>
+<td><?php echo  $type ?></td>
+<td><?php echo  $detail ?></td>
+<!-- <td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td> -->
 </tr>
 <?php
-$i++;
-}
+
 ?>
 </table>
 

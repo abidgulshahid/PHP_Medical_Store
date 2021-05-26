@@ -66,7 +66,7 @@
   <div class="bg-light p-5 rounded">
     <h1> <code>Noman</code></h1>
     <hr>
-    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="stock_details.php" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
+    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="stock.php" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="add.php" role="button">ADD &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">BillS &raquo;</a>
 
