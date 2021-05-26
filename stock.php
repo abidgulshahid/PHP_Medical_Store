@@ -92,7 +92,7 @@ while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
 <td><?php echo $row["type"]; ?></td>
-<td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
+<td><a href="stock_details.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
 </tr>
 <?php
 $i++;
