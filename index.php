@@ -44,12 +44,11 @@ include "db.php";
 <body>
 
 
-
   <div class="container-fluid">
       <div class="row no-gutter">
           <!-- The image half -->
           <div class="col-md-6 d-none d-md-flex bg-image">
-            <img src="assets/login_image.jpg" width="720" height="409"/>
+            <img src="assets/login_image.jpg" width="1024" height="720"/>
           </div>
 
 

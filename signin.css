@@ -8,3 +8,7 @@
   background-size: cover;
   background-position: center center;
 }
+
+body{
+  background: url('assets/login_image.jpg');
+}
