@@ -94,7 +94,7 @@ global $result;
       $update = true;
       $get_record = mysqli_query($db, "SELECT * FROM categories WHERE type ='$id' ");
 
-  
+
   }
 
 

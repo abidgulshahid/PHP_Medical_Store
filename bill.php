@@ -1,6 +1,8 @@
 <?php
 include 'db.php';
 global $result;
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,9 +76,62 @@ global $result;
 
 <main class="container">
   <div class="bg-light p-5 rounded">
+
     <h1>Bill Details</h1>
     <center>
 
+
+      <form action="" method="POST">
+
+<?php
+$result_query = "SELECT * FROM categories";
+$result = mysqli_query($db,$result_query);
+while($row = mysqli_fetch_assoc($query))
+{
+      $data = $row;
+}
+ echo json_encode($data);
+
+
+
+
+?>
+
+        <div class="form-group">
+         <select class="form-control" name="" id="exampleFormControlSelect1">
+           <?php
+
+                 $update = true;
+               $get_record = mysqli_query($db, "SELECT * FROM categories");
+
+
+
+
+
+
+           $i=0;
+
+           while($row = mysqli_fetch_array($get_record)){
+           ?>
+              <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+           <?php
+           $i++;
+
+           }
+           ?>
+         </select>
+       </div>
+
+
+
+
+      <!-- <input type="text" name="name">
+      <input type="text" name="type">
+      <input type="text" name="detail"> -->
+
+      <input type="submit" class="btn btn-primary"  name="submit" value="Enter Data">
+
+          </form>
 
 
 
