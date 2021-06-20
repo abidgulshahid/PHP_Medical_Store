@@ -68,7 +68,7 @@
     <hr>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="stock.php" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="add.php" role="button">ADD &raquo;</a><br><br>
-    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="bill.php" role="button">BillS &raquo;</a>
+    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="bill_page.php" role="button">BillS &raquo;</a>
 
   </div>
 </main>
