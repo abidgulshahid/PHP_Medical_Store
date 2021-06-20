@@ -98,7 +98,9 @@ while($row = mysqli_fetch_assoc($query))
 ?>
 
         <div class="form-group">
+
          <select class="form-control" name="" id="exampleFormControlSelect1">
+           <option value="Select Your Data">Select Your Data</option>
            <?php
 
                  $update = true;
@@ -113,7 +115,7 @@ while($row = mysqli_fetch_assoc($query))
 
            while($row = mysqli_fetch_array($get_record)){
            ?>
-              <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+              <option id="<?php echo $row['id'] ?>" value="<?php echo $row['name'] ?>"><?php echo $row['name'] ?></option>
            <?php
            $i++;
 
