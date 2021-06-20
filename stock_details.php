@@ -93,31 +93,26 @@ global $result;
       $id = $_GET['type'];
       $update = true;
       $get_record = mysqli_query($db, "SELECT * FROM categories WHERE type ='$id' ");
-      $total_record = mysqli_query($db,"SELECT COUNT(*) FROM categories WHERE type='$id'");
 
-      if (count(array( $get_record)) ==1) {
-          $n = mysqli_fetch_array($get_record);
-          $name = $n['name'];
-          $type = $n['type'];
-          $detail = $n['details'];
-
-      }
+  
   }
-
 
 
 
 $i=0;
 
+while($row = mysqli_fetch_array($get_record)){
 ?>
 <tr>
-<td><?php echo  $name ?></td>
-<td><?php echo  $type ?></td>
-<td><?php echo  $detail ?></td>
+<td><?php echo  $row['name']; ?></td>
+<td><?php echo  $row['type'] ?></td>
+<td><?php echo  $row['details'] ?></td>
 <!-- <td><a href="stock.php?id=<?php echo $row["type"]; ?>">View Details</a></td> -->
 </tr>
 <?php
+$i++;
 
+}
 ?>
 </table>
 
