@@ -84,12 +84,10 @@ global $result;
 </thead>
 <?php
 
-    $result = mysqli_query($db,"SELECT * FROM categories");
+    $result = mysqli_query($db,"SELECT type FROM categories");
 
         $n = mysqli_fetch_array($result);
-        $name = $n['name'];
         $type = $n['type'];
-        $detail = $n['details'];
 
 
 
@@ -97,7 +95,8 @@ $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
-<td><?php echo $row["type"]; ?></td>
+<td><?php echo $row['type'] ?></td>
+
 <td><a href="stock_details.php?type=<?php echo $row["type"]; ?>">View Details</a></td>
 </tr>
 <?php
