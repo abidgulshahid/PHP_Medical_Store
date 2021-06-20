@@ -128,9 +128,9 @@
                            <td> </td>
                            <td class="text-right text-dark" >
                                 <h5><strong>Sub Total:  Rs </strong></h5>
-                            <input type="number" width="20px" id="discount" min="0" value="0" class="form-control">
 
-                                <p><strong>Tax (5%) : Rs </strong></p>
+
+                                <p><strong>Tax Rs:   <input type="number"style="width:10em;" placeholder="Enter Discount" id="discount" min="0" value="0">  </strong></p>
                            </td>
                            <td class="text-center text-dark" >
                               <h5> <strong><span id="subTotal"></strong></h5>
