@@ -84,10 +84,8 @@ global $result;
 </thead>
 <?php
 
-    $result = mysqli_query($db,"SELECT type FROM categories");
+    $result = mysqli_query($db,"SELECT DISTINCT(type) FROM categories");
 
-        $n = mysqli_fetch_array($result);
-        $type = $n['type'];
 
 
 
@@ -100,7 +98,7 @@ while($row = mysqli_fetch_array($result)) {
 <td><a href="stock_details.php?type=<?php echo $row["type"]; ?>">View Details</a></td>
 </tr>
 <?php
-$i++;
+
 }
 ?>
 </table>
