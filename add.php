@@ -1,7 +1,7 @@
 <?php
 
 include 'db.php';
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ include 'db.php';
 
 
 
-  
+
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -55,11 +55,11 @@ include 'db.php';
       }
     </style>
 
-    
+
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
-    
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
@@ -78,10 +78,23 @@ include 'db.php';
 
 
       </ul>
+      <?php
+
+      if(isset($_SESSION['status']))
+      {
+        echo "<h4>".$_SESSION['status']."</h4>";
+        unset($_SESSION['status']);
+      }
+
+      ?>
       <form class="d-flex" method="GET" action='search.php'>
         <input class="form-control me-2" name='search' type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Logout</a>
+              </li>
     </div>
   </div>
 </nav>
@@ -97,15 +110,22 @@ include 'db.php';
   </div>
 
   <div class="form-group">
-    <input type="text" name="type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
-  </div>
-
+   <select class="form-control" name="type" id="exampleFormControlSelect1">
+     <option value="">Select Your Medicine Type</option>
+     <option value="Tablets">Tablets</option>
+     <option value="Syrup">Syrup</option>
+     <option value="Injection">Injection</option>
+   </select>
+ </div>
 
   <div class="form-group">
     <input type="text" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Details">
   </div>
-<!-- <input type="text" name="name"> 
-<input type="text" name="type"> 
+
+
+
+<!-- <input type="text" name="name">
+<input type="text" name="type">
 <input type="text" name="detail"> -->
 
 <input type="submit" class="btn btn-primary"  name="submit" value="Enter Data">
@@ -118,17 +138,17 @@ include 'db.php';
 
 
 
-      
+
   </body>
 </html>
-<?php 
+<?php
   if(isset($_POST['submit'])){
       $name = $_POST['name'];
       $type = $_POST['type'];
       $detail    = $_POST['detail'];
-    
+
       // $check_query = "SELECT name,type,details FROM categories WHERE name='.$name.' AND type='.$type.' AND detail='.$detail.'";
-      // $check_query = "SELECT * FROM `categories` WHERE 
+      // $check_query = "SELECT * FROM `categories` WHERE
       // `name` = `{$name}` OR
       // `type` = `{$type}` OR
       // `detail` = `{$detail}`
@@ -141,7 +161,7 @@ include 'db.php';
       //   {
       //     while($data = mysqli_fetch_assoc($check_result)){
 
-          
+
       //     echo "<script> alert('Data Already Available in your Database.') </script>";
       //     }
       //   }
@@ -149,29 +169,30 @@ include 'db.php';
       //     echo "<script> alert('Not Found.') </script>";
 
       //   }
-      // }else 
+      // }else
       // {
       //   echo "Error". mysqli_error();
       // }
 
-  
- 
+
+
       $sql = "INSERT INTO categories (name,type,details) VALUES ('$name','$type','$detail')";
       $result =  mysqli_query($db, $sql);
       if ($result)  {
-        echo "<script> alert('Data Inserted') </script>";
+        $_SESSION['status'] = "Inserted Successfully";
       } else {
+        $_SESSION['status'] = "Something Wrong";
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
       }
-    
+
 
 
   }
 
 
-// ?> 
+// ?>
 
  <?php
 // while($row = $result->fetch_assoc(  )){
 
-?> 
+?>
