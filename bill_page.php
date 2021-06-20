@@ -150,13 +150,7 @@
                            </td>
                         </tr>
                      </table>
-                     <form action="pdff.php" method="POST">
-                       <input type="hidden" id='vegitable' name="veg">
-                       <input type="hidden" id='qty' name="qty">
-                       <input type="hidden" id='price' name="price">
-                       <input type="hidden" id='discount' name='discount'>
-                     <button id="add" name="submit" class="btn btn-primary">Export to PDF?</button>
-                   </form>
+
                   </div>
                </div>
             </div>
@@ -278,3 +272,10 @@
         setTimeout(displayClock, 1000);
      }
 </script>
+<form action="pdff.php" method="POST">
+  <input type="hidden" id='vegitable' name="veg">
+  <input type="hidden" id='qty' name="qty">
+  <input type="hidden" id='price' name="price">
+  <input type="hidden" id='discount' name='discount'>
+<button id="add" name="submit" class="btn btn-primary">Export to PDF?</button>
+</form>
