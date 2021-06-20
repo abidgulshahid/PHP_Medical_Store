@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
 
-    
+
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -31,12 +31,12 @@
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
-    
+
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
@@ -68,13 +68,13 @@
     <hr>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="stock.php" role="button">VIEW STOCK DETAILS &raquo;</a><br><br>
     <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="add.php" role="button">ADD &raquo;</a><br><br>
-    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="#" role="button">BillS &raquo;</a>
+    <a class="btn btn-lg btn-primary" style='font-size:1em; padding:2em; width:67em;' href="bill.php" role="button">BillS &raquo;</a>
 
   </div>
 </main>
 
 
 
-      
+
   </body>
 </html>
