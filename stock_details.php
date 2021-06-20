@@ -38,14 +38,14 @@ global $result;
       }
     </style>
 
-    
+
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
 
-  
 
-    
+
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
@@ -88,22 +88,24 @@ global $result;
 
 </thead>
 <?php
-  if (isset($_GET['id']))
+  if (isset($_GET['type']))
   {
-      $id = $_GET['id'];
+      $id = $_GET['type'];
       $update = true;
-      $get_record = mysqli_query($db, "SELECT * FROM categories WHERE id =$id ");
-  
-      if (count(array( $get_record)) == 1 ) {
+      $get_record = mysqli_query($db, "SELECT * FROM categories WHERE type ='$id' ");
+      $total_record = mysqli_query($db,"SELECT COUNT(*) FROM categories WHERE type='$id'");
+
+      if (count(array( $get_record)) ==1) {
           $n = mysqli_fetch_array($get_record);
           $name = $n['name'];
           $type = $n['type'];
           $detail = $n['details'];
+
       }
   }
-  
-  
-   
+
+
+
 
 $i=0;
 
@@ -112,7 +114,7 @@ $i=0;
 <td><?php echo  $name ?></td>
 <td><?php echo  $type ?></td>
 <td><?php echo  $detail ?></td>
-<!-- <td><a href="stock.php?id=<?php echo $row["id"]; ?>">View Details</a></td> -->
+<!-- <td><a href="stock.php?id=<?php echo $row["type"]; ?>">View Details</a></td> -->
 </tr>
 <?php
 
@@ -125,6 +127,6 @@ $i=0;
 
 
 
-        
+
   </body>
 </html>

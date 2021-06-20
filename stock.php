@@ -38,11 +38,11 @@ global $result;
       }
     </style>
 
-    
+
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
-    
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
@@ -84,15 +84,21 @@ global $result;
 </thead>
 <?php
 
-    $result = mysqli_query($db,"SELECT id, type FROM categories");
-   
+    $result = mysqli_query($db,"SELECT * FROM categories");
+
+        $n = mysqli_fetch_array($result);
+        $name = $n['name'];
+        $type = $n['type'];
+        $detail = $n['details'];
+
+
 
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
 <td><?php echo $row["type"]; ?></td>
-<td><a href="stock_details.php?id=<?php echo $row["id"]; ?>">View Details</a></td>
+<td><a href="stock_details.php?type=<?php echo $row["type"]; ?>">View Details</a></td>
 </tr>
 <?php
 $i++;
@@ -106,6 +112,6 @@ $i++;
 
 
 
-        
+
   </body>
 </html>
