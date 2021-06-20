@@ -73,14 +73,14 @@
                                  $query = mysqli_query($db,$sql);
                                  while($row = mysqli_fetch_assoc($query)){
                                  ?>
-                              <option id="<?php echo $row['id']; ?>" value="<?php echo $row['name']; ?>" class="vegitable custom-select">
+                              <option  id="<?php echo $row['id']; ?>" value="<?php echo $row['name']; ?>" class="vegitable custom-select">
                                  <?php echo $row['name']; ?>
                               </option>
                               <?php  }?>
                            </select>
                         </td>
                         <td style="width:1%">
-                          <input type="number" id="qty" min="0" value="0" class="form-control">
+                          <input type="number"  id="qty" min="0" value="0" class="form-control">
                         </td>
                         <td>
                            <p id="price"></p>
@@ -142,7 +142,7 @@
                            <td> </td>
                            <td> </td>
                            <td class="text-right text-dark">
-                              <h5><strong>Gross Total: Rs </strong></h5>
+                              <h5 name='gross'><strong>Gross Total: Rs </strong></h5>
                            </td>
                            <td class="text-center text-danger">
                               <h5 id="totalPayment"><strong> </strong></h5>
@@ -150,6 +150,13 @@
                            </td>
                         </tr>
                      </table>
+                     <form action="pdff.php" method="POST">
+                       <input type="hidden" id='vegitable' name="veg">
+                       <input type="hidden" id='qty' name="qty">
+                       <input type="hidden" id='price' name="price">
+                       <input type="hidden" id='discount' name='discount'>
+                     <button id="add" name="submit" class="btn btn-primary">Export to PDF?</button>
+                   </form>
                   </div>
                </div>
             </div>
