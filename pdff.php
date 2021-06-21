@@ -23,8 +23,10 @@ if(isset($_POST['submit'])){
   $qty = $_POST['qty'];
 
 $total = $price * $qty;
-
-$html = "NMS"."<br>";
+foreach ($name as $key) {
+  $html = "<h1>$key</h1>";
+}
+$html .= "<h1>NMS $name</h1>"."<br>";
 $html .= "Address: GPGC Lakki Marwat"."<br>";;
 $html .= "Buyer Name:".$buyer."<br>";;
 $html .= "Total Quantity:".$qty."<br>";;
