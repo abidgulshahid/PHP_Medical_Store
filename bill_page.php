@@ -52,7 +52,7 @@
 
          <div class="row">
             <div class="col-md-5  mt-4 ">
-              <form>
+              <form action="pdff.php" method="POST">
               <div class="form-group">
                 <select name="vegitable" id="vegitable"  class="form-control">
                    <?php
@@ -69,7 +69,7 @@
 
 
        <div class="form-group">
-         <input type="number" name="price" class="form-control" id="price" disabled />
+         <input type="number" name="price" class="form-control" id="price"  />
 
        </div>
 
@@ -79,17 +79,21 @@
           <!-- <p id="price"></p> -->
        </div>
 
-       <div class="form-group">
 
-       <input  type="submit"  name="submit" class="btn btn-primary">
+       <div class="form-group">
+       <input style="margin-left:20%"  type="submit" value="Export To PDF ?"  name="submit" class="btn btn-primary">
+     </div>
+
+     <div class="form-group">
+       <input type="text" name="name" class="form-control"  placeholder="Enter Buyer Name" />
 
      </div>
 
-
    </form>
-   <div  class="form-group">
-</div>
-<button id="add" class="btn btn-primary">Add</button>
+
+     <button id="add" style="margin-right:20%; position:absolute;top:162px; width:94px;" class="btn btn-primary">Add</button>
+
+
 
 
 

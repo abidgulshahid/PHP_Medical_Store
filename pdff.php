@@ -19,10 +19,21 @@ $mpdf = new \Mpdf\Mpdf();
 if(isset($_POST['submit'])){
   $name = $_POST['vegitable'];
   $price = $_POST['price'];
+  $buyer = $_POST['name'];
   $qty = $_POST['qty'];
 
+$total = $price * $qty;
 
-  $mpdf->WriteHTML($qty);
+$html = "NMS"."<br>";
+$html .= "Address: GPGC Lakki Marwat"."<br>";;
+$html .= "Buyer Name:".$buyer."<br>";;
+$html .= "Total Quantity:".$qty."<br>";;
+$html .= "Price of Each Quantity: ".$price."<br>";;
+$html .= "Your Bill: ".$total."<br>";;
+
+
+
+  $mpdf->WriteHTML($html);
   $mpdf->Output();
 
 }
