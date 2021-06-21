@@ -9,9 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>Document</title>
       <style>
         .result{
@@ -54,41 +52,60 @@
 
          <div class="row">
             <div class="col-md-5  mt-4 ">
-               <table class="table" style="background-color:#f5f5f5;">
-                  <thead>
-                     <tr>
-                        <th>No.</th>
-                        <th>Meal Items</th>
-                        <th style="width: 31%">Qty</th>
-                        <th>Price</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td scope="row">1</td>
-                        <td style="width:60%">
-                           <select name="vegitable" id="vegitable"  class="form-control">
-                              <?php
-                                 $sql = "SELECT * FROM categories";
-                                 $query = mysqli_query($db,$sql);
-                                 while($row = mysqli_fetch_assoc($query)){
-                                 ?>
-                              <option  id="<?php echo $row['id']; ?>" value="<?php echo $row['name']; ?>" class="vegitable custom-select">
-                                 <?php echo $row['name']; ?>
-                              </option>
-                              <?php  }?>
-                           </select>
-                        </td>
-                        <td style="width:1%">
-                          <input type="number"  id="qty" min="0" value="0" class="form-control">
-                        </td>
-                        <td>
-                           <p id="price"></p>
-                        </td>
-                        <td><button id="add" class="btn btn-primary">Add</button></td>
-                     </tr>
-                  </tbody>
-               </table>
+              <form>
+              <div class="form-group">
+                <select name="vegitable" id="vegitable"  class="form-control">
+                   <?php
+                      $sql = "SELECT * FROM categories";
+                      $query = mysqli_query($db,$sql);
+                      while($row = mysqli_fetch_assoc($query)){
+                      ?>
+             <option  id="<?php echo $row['id']; ?>" value="<?php echo $row['name']; ?>" class="vegitable custom-select"> <?php echo $row['name']; ?>  </option>
+                   <?php  }?>
+
+                </select>
+     </div>
+
+
+
+       <div class="form-group">
+         <input type="number" name="price" class="form-control" id="price" disabled />
+
+       </div>
+
+       <div class="form-group">
+         <input type="number"name="qty"  id="qty" min="0" value="0" class="form-control" placeholder="Quantity">
+
+          <!-- <p id="price"></p> -->
+       </div>
+
+       <div class="form-group">
+
+       <input  type="submit"  name="submit" class="btn btn-primary">
+
+     </div>
+
+
+   </form>
+   <div  class="form-group">
+</div>
+<button id="add" class="btn btn-primary">Add</button>
+
+
+
+
+                        <!-- <td><input  type="submit"  id="add" name="submit" class="btn btn-primary"></td> -->
+
+
+
+                     <!-- </tr> -->
+                     <!-- <button id="add"  class="btn btn-primary">Add</button> -->
+
+                  <!-- </tbody> -->
+
+               <!-- </table> -->
+
+
                <div role="alert" id="errorMsg" class="mt-5" >
                  <!-- Error msg  -->
               </div>
@@ -169,7 +186,7 @@
           dataType:'json',
           success:function(data)
             {
-               $('#price').text(data.details);
+               $('#price').val(data.details);
 
                //$('#qty').text(data.product_qty);
             }
@@ -182,7 +199,7 @@
 
         var name = $('#vegitable').val();
         var qty = $('#qty').val();
-        var price = $('#price').text();
+        var price = $('#price').val();
         var discount = $('#discount').val();
         if(qty == 0)
         {
@@ -203,7 +220,7 @@
           var subTotal = 0;
           subTotal += parseInt(total);
 
-          var table =   '<tr><td>'+ count +'</td><td>'+ name + '</td><td>' + qty + '</td><td>' + price + '</td><td><strong><input type="hidden" id="total" value="'+total+'">' +total+ '</strong></td></tr>';
+     var table =   '<tr><td>'+ count +'</td><td>'+ name + '</td><td>' + qty + '</td><td>' + price + '</td><td><strong><input type="hidden" id="total" value="'+total+'">' +total+ '</strong></td></tr>';
           $('#new').append(table)
 
            // Code for Sub Total of Vegitables
@@ -272,10 +289,3 @@
         setTimeout(displayClock, 1000);
      }
 </script>
-<form action="pdff.php" method="POST">
-  <input type="hidden" id='vegitable' name="veg">
-  <input type="hidden" id='qty' name="qty">
-  <input type="hidden" id='price' name="price">
-  <input type="hidden" id='discount' name='discount'>
-<button id="add" name="submit" class="btn btn-primary">Export to PDF?</button>
-</form>
