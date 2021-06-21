@@ -74,7 +74,7 @@
        </div>
 
        <div class="form-group">
-         <input type="number"name="qty"  id="qty" min="0" value="0" class="form-control" placeholder="Quantity">
+         <input type="number"name="qty"  id="qty" min="0" value="1" class="form-control" placeholder="Quantity">
 
           <!-- <p id="price"></p> -->
        </div>
