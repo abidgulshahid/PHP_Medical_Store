@@ -38,12 +38,12 @@ global $result;
       }
     </style>
 
-    
+
     <link href="navbar-top.css" rel="stylesheet">
   </head>
   <body>
 
-  <?php 
+  <?php
 if (isset($_GET['edit']))
 {
     $id = $_GET['edit'];
@@ -60,7 +60,7 @@ if (isset($_GET['edit']))
 
 
 ?>
-    
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">NMS</a>
@@ -90,34 +90,38 @@ if (isset($_GET['edit']))
   <h1>Update Data</h1>
     <center>
 <form action="" method="POST">
- 
+
 <div class="form-group">
     <input type="text" value="<?php echo $name; ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name='name'>
   </div>
 
   <div class="form-group">
-    <input type="text" value="<?php echo $type; ?>" name="type" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Type">
-  </div>
-
+   <select class="form-control" name="type" id="exampleFormControlSelect1">
+     <option value="">Select Your Medicine Type</option>
+     <option value="Tablets">Tablets</option>
+     <option value="Syrup">Syrup</option>
+     <option value="Injection">Injection</option>
+   </select>
+ </div>
 
   <div class="form-group">
     <input type="text" value="<?php echo $detail; ?>" name="detail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Details">
   </div>
   <input type="hidden" name="id" value="<?php echo $id; ?>">
 
-<!-- <input type="text" name="name"> 
-<input type="text" name="type"> 
+<!-- <input type="text" name="name">
+<input type="text" name="type">
 <input type="text" name="detail"> -->
 
 <input type="submit" class="btn btn-primary"  name="update" value="Update Data">
 
     </form>
- 
+
     </center>
   </div>
 </main>
 
-<?php 
+<?php
 
 if (isset($_POST['update']))
 {
@@ -134,7 +138,7 @@ if (isset($_POST['update']))
         echo "<script> alert('Updated')</script>";
 
     }
-    else 
+    else
     {
         echo "<script> alert('Not Updated')</script>";
 
@@ -144,6 +148,6 @@ if (isset($_POST['update']))
 
 
 ?>
-        
+
   </body>
 </html>

@@ -23,6 +23,7 @@ if(isset($_POST['submit'])){
   $qty = $_POST['qty'];
 
 $total = $price * $qty;
+
 foreach ($name as $key) {
   $html = "<h1>$key</h1>";
 }

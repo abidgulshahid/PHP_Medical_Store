@@ -107,7 +107,9 @@ while($row = mysqli_fetch_array($get_record)){
 <td><?php echo  $row['name']; ?></td>
 <td><?php echo  $row['type'] ?></td>
 <td><?php echo  $row['details'] ?></td>
-<!-- <td><a href="stock.php?id=<?php echo $row["type"]; ?>">View Details</a></td> -->
+<td><a href="delete.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
+<td><a href="update.php?edit=<?php echo $row["id"]; ?>">Update</a></td>
+
 </tr>
 <?php
 $i++;
