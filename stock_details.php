@@ -74,7 +74,7 @@ global $result;
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Stocks  Details</h1>
+    <h1>Stocks  Details </h1>
     <center>
 
 
@@ -82,7 +82,7 @@ global $result;
  <thead>
 <tr>
 <th>Name</th>
-<th>Type</th>
+<th>Type</th>>
 <th>Details</th>
 </tr>
 
@@ -94,7 +94,6 @@ global $result;
       $update = true;
       $get_record = mysqli_query($db, "SELECT * FROM categories WHERE type ='$id' ");
 
-
   }
 
 
@@ -102,7 +101,9 @@ global $result;
 $i=0;
 
 while($row = mysqli_fetch_array($get_record)){
-?>
+
+
+  ?>
 <tr>
 <td><?php echo  $row['name']; ?></td>
 <td><?php echo  $row['type'] ?></td>
