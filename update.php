@@ -97,7 +97,7 @@ if (isset($_GET['edit']))
 
   <div class="form-group">
    <select class="form-control" name="type" id="exampleFormControlSelect1">
-     <option value="">Select Your Medicine Type</option>
+     <option value="<?php echo $type ?>">  Your Current Type: <?php echo $type ?></option>
      <option value="Tablets">Tablets</option>
      <option value="Syrup">Syrup</option>
      <option value="Injection">Injection</option>
