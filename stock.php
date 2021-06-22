@@ -71,7 +71,7 @@ global $result;
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <h1>Search Data</h1>
+    <h1>Stock Data</h1>
     <center>
 
 
